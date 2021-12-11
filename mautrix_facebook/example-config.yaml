@@ -250,6 +250,8 @@ bridge:
     # other configuration. This may be useful if you don't want to use the default proxy for large files.
     sandbox_media_download: false
 
+    disable_proxy_mqtt: false
+
     # Permissions for using the bridge.
     # Permitted values:
     #       user - Use the bridge with puppeting.

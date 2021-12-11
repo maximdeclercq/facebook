@@ -115,6 +115,7 @@ class Config(BaseBridgeConfig):
         copy("bridge.mute_bridging")
         copy("bridge.tag_only_on_create")
         copy("bridge.sandbox_media_download")
+        copy("bridge.disable_proxy_mqtt")
 
         copy_dict("bridge.permissions")
 

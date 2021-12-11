@@ -607,7 +607,8 @@ class User(DBUser, BaseUser):
     async def _try_listen(self) -> None:
         try:
             if not self.mqtt:
-                self.mqtt = AndroidMQTT(self.state, log=self.log.getChild("mqtt"))
+                self.mqtt = AndroidMQTT(self.state, log=self.log.getChild("mqtt"),
+                                        use_proxy=not self.config["bridge.disable_proxy_mqtt"])
                 self.mqtt.seq_id_update_callback = self._update_seq_id
                 self.mqtt.region_hint_callback = self._update_region_hint
                 self.mqtt.add_event_handler(mqtt_t.Message, self.on_message)
